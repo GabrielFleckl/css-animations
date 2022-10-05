@@ -6,12 +6,13 @@
 
 html,
 body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
   background-color: #7159c1;
   font-family: Roboto, Arial, sans-serif;
+  overflow: hidden;
 }
 
 section {
@@ -19,20 +20,22 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 60px;
 }
 
 h1 {
   font-size: 32px;
-  letter-spacing: 1px;
-  margin: 20px 0;
-  color: white;
+  color: #63519c;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 form {
   margin: 20px 0;
   background-color: white;
-  padding: 30px 25px;
+  padding: 25px 25px;
   border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px #ffffff3b;
 }
 
 form .input-block {
@@ -67,22 +70,96 @@ form .btn-login {
   padding: 7px;
 }
 
-/* Aparição do form */
+/* Animações do form */
 
-form{
+form {
   animation-name: fade;
-  animation-duration: 1s;
+  animation-duration: 0.2s;
+  overflow: hidden;
+}
+
+form .input-block:nth-child(2) {
+  animation-name: move;
+  animation-duration: 500ms;
+
+}
+
+form .input-block:nth-child(3) {
+  animation-name: move;
+  animation-duration: 400ms;
+  animation-delay: 100ms;
+  animation-fill-mode: backwards;
+}
+
+form .btn-login {
+  animation: move 400ms;
+  animation-delay: 250ms;
+  animation-fill-mode: backwards;
 }
 
 
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes fade {
-  from{
+  from {
     opacity: 0;
     transform: scale(0.8);
   }
-  to{
+
+  to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
+
+/* Sumindo com o form*/
+
+.form-hide {
+  animation: down 1s forwards;
+  animation-timing-function: cubic-bezier(0.37, -0.8, 1, -0.79);
+}
+
+
+@keyframes down {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Animação no-no*/
+
+
+form.validate-error{
+  animation: nono 300ms linear , fade paused;
+  animation-iteration-count: 2;
+}
+
+@keyframes nono {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  35% {
+    transform: translateX(-5%);
+  }
+
+  70% {
+    transform: translateX(5%);
+  }
+
+}
