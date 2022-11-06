@@ -27,13 +27,6 @@ Aqui você pode conferir o layout em suas respectivas versões. <br>
 
 ---
 
-### Versão Mobile 📱
-
-<br>
-<p align="center">
-  <img alt="layout-web" src=".github/mobile.png" width="40%">
-</p>
-
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -55,9 +48,13 @@ Neste projeto aprendi a usar animações e com isso fazer um formulário animado
 - animation-direction: reverse;
 - animation-iteration-count: infinite;
 
+<br>
+
 ## 📝 Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+<br>
 
 ## 🌐 Contato
 
